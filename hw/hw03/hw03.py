@@ -70,7 +70,20 @@ def pingpong(n):
     True
     """
     "*** YOUR CODE HERE ***"
+    # base case
+    if n == 1:
+        return 1
+    else:
+        return pingpong(n-1) + pong(n-1)
 
+def pong(n):
+    if n < 8:
+        return 1
+    else:
+        if n % 8 == 0 or num_eights(n) > 0:
+            return -pong(n-1)
+        else:
+            return pong(n-1)
 
 def next_larger_coin(coin):
     """Returns the next larger coin in order.
