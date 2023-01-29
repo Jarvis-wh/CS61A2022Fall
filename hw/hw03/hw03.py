@@ -139,6 +139,26 @@ def count_coins(change):
     True
     """
     "*** YOUR CODE HERE ***"
+    if change >= 25:
+        return count_coins(change-25)+foo(change,10)
+    elif change >= 10:
+        return count_coins(change-10)+foo(change,5)
+    elif change >=5:
+        return count_coins(change-5)+foo(change,1)
+    else:
+        return 1
+        
+def foo(change,coin):
+    if coin == 1:
+        return 1
+    elif coin == None:
+        return 0
+    elif change == 0:
+        return 1
+    elif change < coin:
+        return count_coins(change)
+    else:
+        return foo(change - coin, coin)+foo(change, next_smaller_coin(coin))
 
 
 anonymous = False  # Change to True if you would like to remain anonymous on the final leaderboard.
