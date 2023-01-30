@@ -78,7 +78,7 @@ def couple(s, t):
     """
     assert len(s) == len(t)
     "*** YOUR CODE HERE ***"
-
+    return [[s[x],t[x]] for x in range(len(s))]
 
 def double_eights(n):
     """ Returns whether or not n has two digits in row that
